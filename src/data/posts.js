@@ -3,7 +3,7 @@ export const posts_data = [
         id: 1,
         title: 'About bike',
         text: 'Detailed information about bikes',
-        like: false
+        like: true
     },
     {
         id: 2,
