@@ -1,7 +1,10 @@
-import React from 'react'
+import React from 'react';
+import s from './index.module.css';
 
-export default function Comment() {
+export default function Comment({comment}) {
     return (
-        <div>Comment</div>
-    )
+		<div className={s.commentItem}>
+			<p>{comment}</p>
+		</div>
+	);
 }

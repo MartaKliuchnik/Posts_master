@@ -3,6 +3,7 @@ import { posts_data } from "../data/posts";
 import PostsContainer from "../PostsContainer";
 import { Context } from '../context';
 import AddPostForm from '../AddPostForm';
+import '../style.css';
 
 function App() {
 	const [posts, setPosts] = useState(posts_data);
@@ -17,8 +18,27 @@ function App() {
 		setPosts([...posts, {
 			id: Date.now(),
 			text,
-			title
+			title,
+			like: false,
+			comments: []
 		}])
+	};
+
+	const addNewComment = ({ idPost, comment }) => {
+		setPosts((prevPosts) => {
+			return prevPosts.map(post => {
+				if (post.id === idPost) {
+					const updatedComments = [...post.comments,
+					{
+						id: Date.now(),
+						comment
+					}
+					];
+					return { ...post, comments: updatedComments }
+				}
+				return post
+			})
+		})
 	}
 
 	return (
@@ -27,6 +47,7 @@ function App() {
 				posts,
 				changeLike,
 				createNewPost,
+				addNewComment,
 			}}
 		>
 			<AddPostForm />

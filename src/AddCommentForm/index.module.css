@@ -1,0 +1,18 @@
+.addCommentForm input {
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 5px;
+    width: 190px;
+}
+
+.addCommentForm button {
+    border: 1px solid transparent;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 15px 5px;
+    width: 100px;
+    background-color: green;
+    color: white;
+    font-size: 12px;
+}
