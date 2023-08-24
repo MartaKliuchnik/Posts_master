@@ -7,7 +7,9 @@ export default function CommentsContainer({ comments, idPost }) {
 	return (
 		<div>
 			{comments.length !== 0 ? (
-				comments.map((comment) => <Comment key={comment.id} {...comment} />)
+				comments.map((comment) => (
+					<Comment key={comment.id} {...comment} idPost={idPost} />
+				))
 			) : (
 				<p className={s.intoText}>Add first comment</p>
 			)}

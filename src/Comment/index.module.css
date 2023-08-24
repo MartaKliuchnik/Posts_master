@@ -5,8 +5,14 @@
     position: relative;
 }
 
-/* .closeItem{
+.deleteCommentIcon{
     position: absolute;
     top: 2px;
     right: 2px;
-} */
+    font-size: small;
+    cursor: pointer;
+}
+
+.deleteCommentIcon:hover{
+    color:red;
+}

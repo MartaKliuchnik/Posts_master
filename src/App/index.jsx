@@ -53,7 +53,19 @@ function App() {
 				return post
 			})
 		})
-	}
+	};
+
+	const deleteChosenComment = (idCurrentPost, idChosenComment) => {
+		setPosts((prevPosts) => {
+			return prevPosts.map(post => {
+				if (post.id === idCurrentPost) {
+					const updatedComments = post.comments.filter(({ id }) => id !== idChosenComment);
+					return {...post, comments: updatedComments}
+				}
+				return post
+			})
+		})
+	};
 
 	return (
 		<Context.Provider
@@ -63,6 +75,7 @@ function App() {
 				createNewPost,
 				addNewComment,
 				deleteChosenPost,
+				deleteChosenComment,
 			}}
 		>
 			<AddPostForm />
