@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { posts_data } from "../data/posts";
 import PostsContainer from "../PostsContainer";
 import { Context } from '../context';
@@ -7,6 +7,15 @@ import '../style.css';
 
 function App() {
 	const [posts, setPosts] = useState(posts_data);
+	
+	useEffect(() => {
+		setPosts(JSON.parse(localStorage.getItem('posts')))
+	}, []);
+
+	useEffect(() => {
+		localStorage.setItem('posts', JSON.stringify(posts));
+	}, [posts])
+
 	
 	const changeLike = (id) => {
 		setPosts(posts.map(post => {
