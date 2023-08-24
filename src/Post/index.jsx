@@ -2,9 +2,10 @@ import React, { useContext } from 'react';
 import s from './index.module.css';
 import { Context } from '../context';
 import CommentsContainer from '../CommentsContainer';
+import { CloseOutlined } from '@ant-design/icons';
 
 export default function Post({ id, title, text, like, comments }) {
-    const { changeLike } = useContext(Context);
+    const { changeLike, deleteChosenPost } = useContext(Context);
     
     const likeElem = like ? 'Liked' : 'Like?';
     const likeStyle = [s.likeBtn, like ? s.likeBtnActive : ''].join(' ');
@@ -16,6 +17,11 @@ export default function Post({ id, title, text, like, comments }) {
 				<p onClick={() => changeLike(id)} className={likeStyle}>
 					{likeElem}
 				</p>
+
+				<CloseOutlined
+					className={s.closeIcon}
+					onClick={() => deleteChosenPost(id)}
+				/>
 				<CommentsContainer comments={comments} idPost={id} />
 			</div>
 		);

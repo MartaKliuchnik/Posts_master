@@ -2,4 +2,11 @@
     color: grey;
     border-bottom: 1px dashed gray;
     margin: 5px;
+    position: relative;
 }
+
+/* .closeItem{
+    position: absolute;
+    top: 2px;
+    right: 2px;
+} */

@@ -9,7 +9,8 @@ function App() {
 	const [posts, setPosts] = useState(posts_data);
 	
 	useEffect(() => {
-		setPosts(JSON.parse(localStorage.getItem('posts')))
+		const res = JSON.parse(localStorage.getItem('posts'));
+		if (res) setPosts(res);
 	}, []);
 
 	useEffect(() => {
@@ -31,6 +32,10 @@ function App() {
 			like: false,
 			comments: []
 		}])
+	};
+
+	const deleteChosenPost = (idChosenPost) => {
+		setPosts([...posts.filter(post => post.id !== idChosenPost)]);
 	};
 
 	const addNewComment = ({ idPost, comment }) => {
@@ -57,6 +62,7 @@ function App() {
 				changeLike,
 				createNewPost,
 				addNewComment,
+				deleteChosenPost,
 			}}
 		>
 			<AddPostForm />
