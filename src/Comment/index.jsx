@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import s from './index.module.css';
-import { ClearOutlined } from '@ant-design/icons';
+import { DeleteOutlined } from '@ant-design/icons';
 import { Context } from '../context';
 
 export default function Comment({ idPost, id, comment }) {
@@ -8,11 +8,11 @@ export default function Comment({ idPost, id, comment }) {
 
 	return (
 		<div className={s.commentItem}>
-			<ClearOutlined
+			<DeleteOutlined 
 				className={s.deleteCommentIcon}
 				onClick={() => deleteChosenComment(idPost, id)}
 			/>
-			<p>{comment}</p>
+			<p className={s.textComment}>{comment}</p>
 		</div>
 	);
 }

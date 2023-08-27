@@ -1,11 +1,19 @@
+.wrapperComments{
+    height: 50px;
+    overflow: scroll;
+}
+
 .commentsFormContainer{
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+    /* margin-bottom: 10px; */
 }
 
 .intoText{
+    padding-top: 20px;
+    text-align: center;
     font-style: italic;
     color: blue;
 }

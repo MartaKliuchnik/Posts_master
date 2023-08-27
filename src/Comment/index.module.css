@@ -16,3 +16,7 @@
 .deleteCommentIcon:hover{
     color:red;
 }
+
+.textComment{
+    width: 97%;
+}

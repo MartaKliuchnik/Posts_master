@@ -7,10 +7,15 @@ import '../style.css';
 
 function App() {
 	const [posts, setPosts] = useState(posts_data);
+	const [pictures, setPictures] = useState([]);
 	
 	useEffect(() => {
 		const res = JSON.parse(localStorage.getItem('posts'));
 		if (res) setPosts(res);
+
+		fetch(`https://picsum.photos/v2/list?page=1&limit=100`)
+			.then((responce) => responce.json())
+			.then((photos) => setPictures(photos));
 	}, []);
 
 	useEffect(() => {
@@ -25,13 +30,23 @@ function App() {
 	};
 
 	const createNewPost = ({ title, text }) => {
-		setPosts([...posts, {
-			id: Date.now(),
-			text,
-			title,
-			like: false,
-			comments: []
-		}])
+		const randomId = Math.ceil(Math.random() * 100);
+		console.log(randomId);
+
+		const randomPhoto = pictures.find(({ id }) => +id === randomId);
+		console.log(randomPhoto.download_url);
+
+		setPosts([
+			...posts,
+			{
+				id: Date.now(),
+				text,
+				title,
+				like: false,
+				photo: randomPhoto?.download_url,
+				comments: [],
+			},
+		]);
 	};
 
 	const deleteChosenPost = (idChosenPost) => {
@@ -75,7 +90,7 @@ function App() {
 				createNewPost,
 				addNewComment,
 				deleteChosenPost,
-				deleteChosenComment,
+				deleteChosenComment
 			}}
 		>
 			<AddPostForm />
