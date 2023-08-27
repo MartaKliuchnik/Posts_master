@@ -16,10 +16,10 @@ export default function AddPostForm() {
         text.value = '';
     }
     return (
-        <form className={s.addPostForm} onSubmit={submit}>
-            <input type="text" name='title' placeholder='Your title'/>
-            <input type="text" name='text' placeholder='Your text' />
-            <button>Add post</button>
-        </form>
-    )
+			<form className={s.addPostForm} onSubmit={submit}>
+				<input type='text' name='title' placeholder='Your title' required />
+				<input type='text' name='text' placeholder='Your text' required />
+				<button>Add post</button>
+			</form>
+		);
 }

@@ -8,7 +8,7 @@
 }
 
 .addCommentForm input {
-    border: 1px solid black;
+    border: 1px solid #6B46C1;
     border-radius: 10px;
     padding: 10px;
     margin: 5px;
@@ -21,7 +21,9 @@
     padding: 10px;
     margin: 15px 5px;
     width: 30%;
-    background-color: green;
+    background-color: #a883f0;
     color: white;
     font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
 }

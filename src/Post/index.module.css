@@ -1,17 +1,24 @@
 .postItem{
-    background-color: #ffffff;
+    background-image: linear-gradient(to bottom,#FEEBC8, #B794F4);
+    background-color: rgba(255, 255, 255, 0.82);
     border-radius: 10px;
-    padding: 30px 15px;
     margin: 10px auto;
     width: 90%;
-    height: 650px;
     position: relative;
     display: flex;
+    height: fit-content;
     flex-direction: column;
     transition: all 0.5s;
 }
 
+.wrapper{
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.82);
+    clip-path: inset(4px round 0.5rem);
+}
+
 .majorVisionPartOfCard{
+    padding: 25px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -35,6 +42,7 @@
     height: 170px;
     overflow: scroll;
 }
+
 .postItem:hover .postInfo {
     margin: 10px 0px;
     width: 100%;
@@ -52,24 +60,27 @@
 
 .likeBtn{
     border-radius: 5px;
-    border: 1px solid grey;
-    color: grey;
-    background-color: rgba(242, 251, 251, 0.333);
+    border: 1px solid #9F7AEA;
+    color: #FAF5FF;
+    background-color: #9f7aea4c;
     width: 50%;
     text-align: center;
+    font-weight: 700;
     cursor: pointer;
     padding: 5px;
     margin: 0 auto;
 }
 
 .likeBtnActive {
-    background-color: blue;
+    background-color: #805AD5;
     color: white;
     border-color: transparent;
+    height: 100%;
 }
 
 .closeIcon{
     display: none;
+    color: #805AD5;
 }
 
 .postItem:hover .closeIcon{
@@ -82,6 +93,7 @@
 
 .hiddenPartOfCard {
     display: none;
+    padding: 0px 5px;
 }
 
 .postItem:hover{

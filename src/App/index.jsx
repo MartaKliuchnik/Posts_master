@@ -2,8 +2,8 @@ import { useState, useEffect } from "react";
 import { posts_data } from "../data/posts";
 import PostsContainer from "../PostsContainer";
 import { Context } from '../context';
-import AddPostForm from '../AddPostForm';
 import '../style.css';
+import NavBar from "../NavBar";
 
 function App() {
 	const [posts, setPosts] = useState(posts_data);
@@ -93,7 +93,7 @@ function App() {
 				deleteChosenComment
 			}}
 		>
-			<AddPostForm />
+			<NavBar/>
 			<PostsContainer />
 		</Context.Provider>
 	);

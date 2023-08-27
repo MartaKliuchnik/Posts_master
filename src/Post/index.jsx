@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import s from './index.module.css';
 import { Context } from '../context';
 import CommentsContainer from '../CommentsContainer';
@@ -12,25 +12,27 @@ export default function Post({ id, title, text, like, photo, comments }) {
 
 	return (
 		<div className={s.postItem}>
-			<div className={s.majorVisionPartOfCard}>
-				<p className={s.titleCard}>{title}</p>
-				<div className={s.imgContainer}>
-					<img src={photo} alt='img' />
+			<div className={s.wrapper}>
+				<div className={s.majorVisionPartOfCard}>
+					<p className={s.titleCard}>{title}</p>
+					<div className={s.imgContainer}>
+						<img src={photo} alt='img' />
+					</div>
+					<div className={s.postInfo}>
+						<p>{text}</p>
+					</div>
+					<div onClick={() => changeLike(id)} className={likeStyle}>
+						{likeElem}
+					</div>
 				</div>
-				<div className={s.postInfo}>
-					<p>{text}</p>
+				<div className={s.hiddenPartOfCard}>
+					<CommentsContainer comments={comments} idPost={id} />
 				</div>
-				<div onClick={() => changeLike(id)} className={likeStyle}>
-					{likeElem}
-				</div>
+				<CloseOutlined
+					className={s.closeIcon}
+					onClick={() => deleteChosenPost(id)}
+				/>
 			</div>
-			<div className={s.hiddenPartOfCard}>
-				<CommentsContainer comments={comments} idPost={id} />
-			</div>
-			<CloseOutlined
-				className={s.closeIcon}
-				onClick={() => deleteChosenPost(id)}
-			/>
 		</div>
 	);
 }

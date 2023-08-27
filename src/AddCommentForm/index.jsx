@@ -17,7 +17,12 @@ export default function AddCommentForm({ idPost }) {
 	
 	return (
 		<form onSubmit={submit} className={s.addCommentForm}>
-			<input type='text' name='comment' placeholder='Type your comment' />
+			<input
+				type='text'
+				name='comment'
+				placeholder='Type your comment'
+				required
+			/>
 			<button>Add comment</button>
 		</form>
 	);
