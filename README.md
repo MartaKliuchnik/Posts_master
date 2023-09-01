@@ -1,3 +1,24 @@
+![Posts_master](https://github.com/MartaKliuchnik/Posts_master/assets/101942611/a343b71a-8c7c-40e7-a6be-9aee57759143)
+
+**Post Master**
+
+With PostMaster, you can create your own posts, interact with content through likes and comments, and have complete control over your posts.
+
+Users can:
+1. Create Your Own Posts (you can share your thoughts, experiences and creativity with the world)
+2. Add/Remove Likes (like posts with a single click to show your support or remove your like if you change your mind)
+3. Add Comments (leave your thoughts, feedback, and discussions on posts through comments)
+4. Delete Posts (PostMaster also allows you to remove a post so effortlessly)
+
+Used web-technologies:
+- HTML, CSS
+- Javascript
+- React (React-router-dom)
+- Ant Design
+- AJAX requests (to fetch data, including images from Lorem Picsum).
+
+link: https://posts-master-cgi4.onrender.com/
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
