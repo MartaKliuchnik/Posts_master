@@ -12,7 +12,7 @@ export const posts_data = [
             },
             {
                 id: 2,
-                comment: 'I disagree'
+                comment: "Today's successful companies are those that apply the latest technology to their work process."
             },
             {
                 id: 3,
@@ -50,11 +50,7 @@ export const posts_data = [
         comments: [
             {
                 id: 1,
-                comment: "In addition, I had insomnia and constant fatigue because of the restlessness that was happening in my life."
-            },
-            {
-                id: 2,
-                comment: "Today's successful companies are those that apply the latest technology to their work process."
+                comment: "Yeep, I had insomnia and constant fatigue"
             }
         ]
     },
